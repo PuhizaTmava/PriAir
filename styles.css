@@ -201,49 +201,116 @@ body{
     padding: 1rem;
     font-size: 1.5rem;
   }
-  .plan__container .subheader {
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: 600;
-    color: var(--text-dark);
-    letter-spacing: 5px;
-  }
-  
-  .plan__container .section__header {
-    text-align: center;
-    font-size: 3rem;
-    line-height: 4rem;
-    margin-bottom: 1rem;
-  }
-  
-  .plan__container .description {
-    text-align: center;
-    color: var(--text-light);
-  }
-  
-  .plan__grid {
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .plan__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
     gap: 2rem;
   }
   
+  .plan__text-container {
+    flex: 1;
+  }
+  
+  .plan__image-container {
+    flex: 1;
+    position: relative;
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+  }
+  
+  .plan__image-container img {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.9; /* Slightly transparent to help with overlapping */
+  }
+  
+  .plan__image-container img:nth-of-type(1) {
+    max-width: 200px; /* Adjust size as needed */
+    top: 40%; /* Adjust vertical positioning */
+    left: 30%; /* Adjust horizontal positioning */
+    transform: translate(-50%, -50%); /* Centering within its container */
+    z-index: 3;
+  }
+  
+  .plan__image-container img:nth-of-type(2) {
+    max-width: 180px; /* Adjust size as needed */
+    top: 50%; /* Adjust vertical positioning */
+    left: 50%; /* Adjust horizontal positioning */
+    transform: translate(-50%, -50%); /* Centering within its container */
+    z-index: 2;
+  }
+  
+  .plan__image-container img:nth-of-type(3) {
+    max-width: 250px; /* Adjust size as needed */
+    top: 60%; /* Adjust vertical positioning */
+    left: 70%; /* Adjust horizontal positioning */
+    transform: translate(-50%, -50%); /* Centering within its container */
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .plan__container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .plan__text-container,
+    .plan__image-container {
+      width: 100%;
+    }
+  
+    .plan__image-container {
+      height: auto; /* Allow auto-height for responsive design */
+    }
+  
+    .plan__image-container img {
+      max-width: 80%;
+      position: relative;
+      transform: none; /* Remove absolute positioning */
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .plan__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between the number and the text */
+  }
+  
+  .plan__content {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between the ellipse and the text */
+  }
+  
   .plan__content .number {
-    display: inline-block;
-    padding: 5px 15px;
-    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* Width of the ellipse */
+    height: 30px; /* Height of the ellipse */
+    border-radius: 20px; /* Ellipse shape */
+    background-color: var(--primary-color); /* Default circle color */
+    color: var(--white); /* Text color inside the ellipse */
     font-weight: 600;
-    color: var(--white);
-    background-color: var(--primary-color);
-    border-radius: 2rem;
+    font-size: 1.2rem;
   }
   
-  .plan__content .number:nth-child(4) {
-    background-color: #e98b6d;
+  .plan__content:nth-of-type(1) .number {
+    background-color: #e98b6d; /* Color for number 01 */
   }
   
-  .plan__content .number:nth-child(7) {
-    background-color: #ffcca3;
+  .plan__content:nth-of-type(2) .number {
+    background-color: #ffcca3; /* Color for number 02 */
+  }
+  
+  .plan__content:nth-of-type(3) .number {
+    background-color: #9ad3bc; /* Color for number 03 */
   }
   
   .plan__content h4 {
@@ -256,33 +323,7 @@ body{
   .plan__content p {
     color: var(--text-light);
     margin-bottom: 2rem;
-  }
+  }   
+    
   
-  .plan__image {
-    position: relative;
-  }
-  
-  .plan__image img {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 10rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .plan__image img:nth-child(1) {
-    max-width: 250px;
-    transform: translate(calc(-50% - 9rem), calc(-50% + 5rem));
-    z-index: 3;
-  }
-  
-  .plan__image img:nth-child(2) {
-    max-width: 260px;
-    transform: translate(-50%, calc(-50% - 5rem));
-    z-index: 2;
-  }
-  
-  .plan__image img:nth-child(3) {
-    max-width: 230px;
-    transform: translate(calc(-50% + 9rem), calc(-50% + 5rem));
-  }
+    
