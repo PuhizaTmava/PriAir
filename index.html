@@ -19,9 +19,36 @@
             <li class="link"><a href="./offers.html">Offers</a></li>
             <li class="link"><a href="./destinations.html">Destinations</a></li>
         </ul>
-        <button class="btn">Sign In</button>
+        <button class="btn btnLogin-popup">Sign In</button>
     </nav>
-    
+
+    <div class="wrapper" style="display: none;">
+      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+      <div class="form-box login">
+        <h2>Login</h2>
+         <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="email" required>
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+            <input type="password" required>
+            <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox">Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="login-register">
+            <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+          </div>
+         </form>
+      </div>
+    </div>
+
     <header class="section__container header__container">
         <h1 class="section__header">Find And Book<br />A Great Experience</h1>
         <img src="assets/image1.jpg" alt="header" />
@@ -194,5 +221,10 @@
         </div>
       </footer>
 
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="script.js"></script>
+
+    
 </body>
 </html>
